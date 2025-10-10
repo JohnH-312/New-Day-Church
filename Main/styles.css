@@ -1,0 +1,154 @@
+:root {
+	--primary-orange: #f47c48;
+	--primary-blue: #1a3d66;
+	--secondary-cream: #fdf5e8;
+	--secondary-blue: #a7d8f0;
+	--secondary-gold: #d9a441;
+}
+
+body {
+	font-family: 'Poppins', Arial, sans-serif;
+	background-color: var(--secondary-cream);
+	color: var(--primary-blue);
+}
+
+.navbar,
+.footer {
+	background-color: var(--primary-blue) !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+	color: #fff;
+}
+
+.transition-navbar {
+	transition: padding 0.3s, background-color 0.3s;
+}
+.navbar.shrunk {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	box-shadow: 0 2px 8px rgba(26,61,102,0.12);
+}
+
+.hero-section {
+	background: var(--secondary-cream);
+	color: var(--primary-blue);
+}
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active  {
+	background-color: var(--secondary-gold);
+	color: var(--primary-blue);
+	border: none;
+}
+.btn-primary:hover {
+	background-color: var(--primary-orange);
+	color: #fff;
+}
+.btn-primary-contrast {
+	background-color: var(--primary-orange);
+	color: var(--primary-blue);
+	border: none;
+}
+.btn-primary-contrast:hover {
+	background-color: var(--primary-blue);
+	color: var(--secondary-cream);
+	color: #fff;
+}
+
+.btn-outline-primary {
+	border-color: var(--primary-orange);
+	color: var(--primary-orange);
+}
+.btn-outline-primary:hover {
+	background: var(--primary-orange);
+	color: #fff;
+	border-color: var(--primary-orange);
+}
+
+.orange-divider {
+	height: 5px;
+	background: var(--primary-orange);
+	border: none;
+	margin: 1rem auto;
+}
+.blue-divider {
+	height: 5px;
+	background: var(--primary-blue);
+	border: none;
+	margin: 1rem auto;
+}
+
+.content-block {
+	min-height: 220px;
+	padding: 1rem;
+}
+
+.white-block {
+	color: var(--primary-blue);
+	background: var(--secondary-cream);
+	border-left: 5px solid var(--primary-orange);
+	border-bottom: 5px solid var(--primary-orange);
+	border-right: 2px solid var(--primary-orange);
+	border-top: 2px solid var(--primary-orange);
+}
+.blue-block {
+	color: var(--primary-blue);
+	background: var(--secondary-blue);
+	border-left: 5px solid var(--primary-orange);
+	border-bottom: 5px solid var(--primary-orange);
+	border-right: 2px solid var(--primary-orange);
+	border-top: 2px solid var(--primary-orange);
+}.gold-block {
+	color: var(--primary-blue);
+	background: var(--secondary-gold);
+	border-left: 5px solid var(--primary-blue);
+	border-bottom: 5px solid var(--primary-blue);
+	border-right: 2px solid var(--primary-blue);
+	border-top: 2px solid var(--primary-blue);
+}
+
+.worship-section {
+	background: var(--secondary-blue);
+}
+
+.mission-section {
+	background: var(--secondary-cream);
+}
+
+.pillar-card {
+	color: var(--primary-blue);
+	font-weight: 500;
+	font-size: larger;
+	font-style: italic;
+	border: 1px solid var(--primary-blue);
+}
+
+.testimonial-section {
+	background: var(--secondary-gold);
+}
+
+.contact-section {
+	background: var(--secondary-blue);
+}
+
+.footer {
+	color: #fff;
+}
+
+a {
+	color: var(--primary-orange);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--primary-blue);
+	text-decoration: underline;
+}
+
+@media (max-width: 575.98px) {
+	.content-block {
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+}
