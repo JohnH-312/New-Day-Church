@@ -1,6 +1,9 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+// You need: npm install express nodemailer body-parser
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
 // creates the express application to merge the layout and page content
 const app = express();
@@ -9,7 +12,7 @@ const PORT = 8080;
 // Serve static assets (CSS, JS, images, etc)
 app.use('/Assets', express.static(path.join(__dirname, 'Assets')));
 app.use('/styles.css', express.static(path.join(__dirname, 'styles.css')));
-app.use('/main.js', express.static(path.join(__dirname, 'main.js')));
+app.use('/scripts.js', express.static(path.join(__dirname, 'scripts.js')));
 
 // "Smart" page rendering
 app.get(['/', '/:page.html'], (req, res) => {
@@ -34,3 +37,35 @@ app.get(['/', '/:page.html'], (req, res) => {
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}/`);
 });
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/send-email', async (req, res) => {
+  const { firstName, lastName, email, subject, body } = req.body;
+
+  // Set up nodemailer transport (configure with your SMTP info)
+  let transporter = nodemailer.createTransport({
+    service: 'gmail', // or your SMTP provider
+    auth: {
+      user: 'jonnyhughes312@gmail.com',
+	  pass: 'qxnv fzsl ibsp bczx' // You have to set up App password in whatever email provider
+    }
+  });
+
+  let mailOptions = {
+    from: email,
+    to: 'jonnyhughes312+test@gmail.com', // The default receiving address
+    subject: subject,
+    text: `From: ${firstName} ${lastName} <${email}>\n\n${body}`
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.send('Email sent!');
+  } catch (error) {
+    res.status(500).send('Failed to send email. ' + error);
+  }
+});
+
+app.listen(8080, () => console.log('Server running on port 8080'));

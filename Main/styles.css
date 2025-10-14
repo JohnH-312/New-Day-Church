@@ -6,10 +6,99 @@
 	--secondary-gold: #d9a441;
 }
 
+html, body {
+	height: 100%;
+	scroll-padding-top: 70px;
+}
+
 body {
 	font-family: 'Poppins', Arial, sans-serif;
 	background-color: var(--secondary-cream);
 	color: var(--primary-blue);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  	padding-top: 80px;
+}
+
+p, li {
+	font-size: large;
+}
+
+h1 {
+	display: 4;
+	font-weight: bold;
+}
+
+h2 {
+	display: 2;
+}
+
+.logo-container {
+  position: relative;
+  height: 70px;         /* your navbar height */
+  overflow: visible;    /* allow image to overflow */
+  display: flex;
+  align-items: center;
+}
+
+/* Style the logo image to overflow and crop top/bottom */
+.navbar-logo {
+  height: 140px;                   /* make it taller than navbar */
+  width: auto;                     /* keep aspect ratio */
+  position: absolute;
+  left: 0;
+  top: -30px;                      /* adjust as needed to center visually */
+  /* Optionally, add object-fit cropping for even more control: */
+  object-fit: cover;               
+  object-position: center top;     /* adjust to control crop position */
+  /* Optionally, a drop shadow for style: */
+  /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); */
+}
+
+.section-content {
+  padding: 2.5rem 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.split-bg-section {
+  display: flex;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.split-bg {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem; /* vertical padding is colored! */
+}
+
+.split-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .split-bg-section {
+    flex-direction: column;
+  }
+  .split-bg {
+    width: 100%;
+    padding: 2.5rem 1rem;
+  }
+}
+
+
+footer.footer {
+	margin-top: auto;
 }
 
 .navbar,
@@ -35,6 +124,7 @@ body {
 	background: var(--secondary-cream);
 	color: var(--primary-blue);
 }
+
 .btn-primary,
 .btn-primary:focus,
 .btn-primary:active  {
@@ -56,6 +146,16 @@ body {
 	color: var(--secondary-cream);
 	color: #fff;
 }
+.btn-secondary {
+	background-color: var(--secondary-blue);
+	color: var(--primary-blue);
+	border: var(--primary-blue);
+}
+.btn-secondary:hover {
+	background-color: var(--primary-blue);
+	color: var(--secondary-cream);
+	color: #fff;
+}
 
 .btn-outline-primary {
 	border-color: var(--primary-orange);
@@ -72,48 +172,30 @@ body {
 	background: var(--primary-orange);
 	border: none;
 	margin: 1rem auto;
+	margin-bottom: 3rem;
+	opacity: 1;
 }
 .blue-divider {
 	height: 5px;
 	background: var(--primary-blue);
 	border: none;
 	margin: 1rem auto;
+	opacity: 1;
 }
 
 .content-block {
-	min-height: 220px;
 	padding: 1rem;
 }
 
-.white-block {
-	color: var(--primary-blue);
-	background: var(--secondary-cream);
-	border-left: 5px solid var(--primary-orange);
-	border-bottom: 5px solid var(--primary-orange);
-	border-right: 2px solid var(--primary-orange);
-	border-top: 2px solid var(--primary-orange);
-}
-.blue-block {
-	color: var(--primary-blue);
-	background: var(--secondary-blue);
-	border-left: 5px solid var(--primary-orange);
-	border-bottom: 5px solid var(--primary-orange);
-	border-right: 2px solid var(--primary-orange);
-	border-top: 2px solid var(--primary-orange);
-}.gold-block {
-	color: var(--primary-blue);
-	background: var(--secondary-gold);
-	border-left: 5px solid var(--primary-blue);
-	border-bottom: 5px solid var(--primary-blue);
-	border-right: 2px solid var(--primary-blue);
-	border-top: 2px solid var(--primary-blue);
-}
-
-.worship-section {
+.light-blue-section {
 	background: var(--secondary-blue);
 }
+.blue-section {
+	background: var(--primary-blue);
+	color: var(--secondary-cream);
+}
 
-.mission-section {
+.cream-section {
 	background: var(--secondary-cream);
 }
 
@@ -125,12 +207,13 @@ body {
 	border: 1px solid var(--primary-blue);
 }
 
-.testimonial-section {
+.gold-section {
 	background: var(--secondary-gold);
 }
 
-.contact-section {
-	background: var(--secondary-blue);
+.black-section {
+	background: #1d1d1f;
+	color: var(--secondary-cream);
 }
 
 .footer {
