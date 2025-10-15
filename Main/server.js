@@ -15,7 +15,7 @@ const certificate = fs.readFileSync(sslCertPath, 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 const app = express();
-const PORT = 3000;
+const PORT = 443;
 
 // Serve static assets (CSS, JS, images, etc)
 app.use('/Assets', express.static(path.join(__dirname, 'Assets')));
