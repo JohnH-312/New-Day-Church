@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 
 // creates the express application to merge the layout and page content
 const app = express();
-const PORT = 8080;
+const PORT = 443;
 
 // Serve static assets (CSS, JS, images, etc)
 app.use('/Assets', express.static(path.join(__dirname, 'Assets')));
@@ -34,8 +34,8 @@ app.get(['/', '/:page.html'], (req, res) => {
 	});
 });
 
-app.listen(PORT, () => {
-	console.log(`Server running at http://localhost:${PORT}/`);
+app.listen(PORT, '0.0.0.0', () => {
+	console.log(`Server running at port ${PORT}/`);
 });
 
 
