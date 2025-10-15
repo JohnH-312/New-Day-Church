@@ -10,8 +10,8 @@ const sslKeyPath = path.join(__dirname, 'key.pem');
 const sslCertPath = path.join(__dirname, 'cert.pem');
 
 // Read SSL credentials
-const privateKey = fs.readFileSync(sslKeyPath, 'utf8');
-const certificate = fs.readFileSync(sslCertPath, 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/yourdomain.com/fullchain.pem', 'utf8');
 const credentials = { key: privateKey, cert: certificate };
 
 const app = express();
