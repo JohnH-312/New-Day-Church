@@ -38,6 +38,9 @@
 [x] - figure out what's wrong with security stuff
     - nothing lmao - just browser cache
     - shut down serve
+        pm2 list
+        pm2 stop server
+        pm2 start server.js
     - run
         '''
         sudo certbot certonly --standalone \
@@ -53,6 +56,8 @@ sudo cp /etc/letsencrypt/live/newdaychurchnashville.org/privkey.pem ~/certs/
 sudo chown $USER:$USER ~/certs/fullchain.pem ~/certs/privkey.pem
 chmod 600 ~/certs/fullchain.pem ~/certs/privkey.pem
         '''
+
+        - or look into "sudo certbot renew"
 [] figure out why some stuff is still sus?
 
 then get it up and going
